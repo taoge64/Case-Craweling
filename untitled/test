@@ -1,0 +1,23 @@
+import math
+def look_up(list, n):
+    for i in range(0, len(list)):
+        if list[i] == n:
+            return i
+
+def binary_search(list, n):
+    low = 0
+    high = len(list) - 1
+    while low <= high:
+
+        mid =(low + high)// 2
+        if n == list[mid] and (list[mid - 1] != n):
+            return mid
+        elif n > list[mid]:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+list = [1,1,1,1,2,2,2,3,3,4]
+print(binary_search(list, 2))
+print(binary_search(list, 1))
